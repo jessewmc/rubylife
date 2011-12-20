@@ -11,7 +11,7 @@ class GameOfLife
 
   end
 
-  def to_str
+  def to_s
     position = 1
     pretty_string = ""
     @board.each_cell do |cell|    
@@ -37,21 +37,23 @@ class GameOfLife
     
     #inelegant parallel iteration
     def private_load(filename)
+      raw_board = ""
       File.open(filename) do |f|
 
         #Strip newlines from cel file
         raw_board = f.read.gsub(/\n/, "")
 
-        position=0
-        @board.each_cell do |cell|
-          #todo: nuke magic number
-          #120 is char code for "x" which is
-          #a live cell
-          if raw_board[position] == 120
-            cell.alive!
-          end
-          position += 1
+      end
+      
+      position=0
+      @board.each_cell do |cell|
+        #todo: nuke magic number
+        #120 is char code for "x" which is
+        #a live cell
+        if raw_board[position] == 120
+          cell.alive!
         end
+        position += 1
       end
     end
 

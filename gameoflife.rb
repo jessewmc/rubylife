@@ -11,6 +11,24 @@ class GameOfLife
 
   end
 
+  def to_str
+    position = 1
+    pretty_string = ""
+    @board.each_cell do |cell|    
+      if cell.alive?
+        pretty_string << "x"
+      else
+        pretty_string << "o"
+      end
+
+      if position % @magic == 0
+        pretty_string << "\n"
+      end
+    end
+    return pretty_string
+  end
+        
+
   def load_board(filename)
     private_load(filename)
   end

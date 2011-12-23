@@ -1,22 +1,39 @@
 class GameOfLifeBoard
 
   def initialize(size=50)
+
     @size = size
     @cells = new_board(@size)
+
   end
 
+  #todo: which of these is more idiomatic?
   def each_cell
+
     0.upto(@size-1) do |x|
       0.upto(@size-1) do |y|
         yield @cells[x][y]
       end
     end
+
+    @cells
+
+  end
+
+  def other_each
+
+    @cells.each_with_index do |i,j|
+      i.each_index do |k|
+        yield @cells[j][k]
+      end
+    end
+  
   end
 
   def next_gen
-    new_board = Array.new(@size) do |i|
-      Array.new(@size, Cell.new)
-    end
+
+    next_board = new_board(@size)
+
     0.upto(@size-1) do |x|
       0.upto(@size-1) do |y|
         neighbours=0

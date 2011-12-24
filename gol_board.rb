@@ -65,7 +65,9 @@ class GameOfLifeBoard
     
     def new_board(size)
       board = Array.new(size) do
-        Array.new(size, Cell.new)
+        Array.new(size) do
+          Cell.new
+        end
       end
       board
     end

@@ -10,10 +10,8 @@ class GameOfLifeBoard
   #todo: which of these is more idiomatic?
   def each_cell
 
-    0.upto(@size-1) do |x|
-      0.upto(@size-1) do |y|
-        yield @cells[x][y]
-      end
+    self.each_index do |x, y|
+      yield @cells[x][y]
     end
 
     @cells
@@ -28,16 +26,6 @@ class GameOfLifeBoard
       end
     end
 
-  end
-
-  def other_each
-
-    @cells.each_with_index do |i,j|
-      i.each_index do |k|
-        yield @cells[j][k]
-      end
-    end
-  
   end
 
   def next_gen

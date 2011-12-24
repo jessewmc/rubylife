@@ -34,6 +34,13 @@ class GameOfLife
     return pretty_string
   end
         
+  #load_board expects a text file in the form of
+  #oooo
+  #oxxo
+  #oooo
+  #where x is a live cell.
+  #todo: get board dimensions from file instead of
+  #assuming hardcoded
 
   def load_board(filename)
     private_load(filename)

@@ -32,33 +32,31 @@ class GameOfLifeBoard
 
     next_board = new_board(@size)
 
-    0.upto(@size-1) do |x|
-      0.upto(@size-1) do |y|
-        neighbours=0
-        (x-1).upto(x+1) do |i|
-          (y-1).upto(y+1) do |j|
-            if @cells[i][j].nil?
-              next
-            end
+    each_index do |x, y|
+      neighbours=0
+      (x-1).upto(x+1) do |i|
+        (y-1).upto(y+1) do |j|
 
-            if @cells[i][j].alive?
-              neighbours+=1
-            end
-          end
-        end
-        if @cells[x][y].alive?
-          neighbours-=1
-          if (2..3).member? neighbours
-            @new[x][y].alive!
-          end
-        else
-          if neighbours == 3
-            @new[x][y].alive!
-          end
+          if @cells[i].nil? then next end
+
+          if @cells[i][j].nil? then next end
+
+          if @cells[i][j].alive? then neighbours +=1 end
+
         end
       end
+
+      if @cells[x][y].alive?
+        neighbours-=1
+        if (2..3).member? neighbours
+          next_board[x][y].alive!
+        end
+      elsif neighbours == 3
+        next_board[x][y].alive!
+      end
     end
-    return new_board
+
+    return next_board
   end
 
   private

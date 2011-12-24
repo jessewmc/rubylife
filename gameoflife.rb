@@ -58,6 +58,8 @@ class GameOfLife
         #a live cell
         if @raw_board[position] == 120
           cell.alive!
+        else
+          cell.dead!
         end
         position += 1
       end

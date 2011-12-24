@@ -12,6 +12,10 @@ class GameOfLife
 
   end
 
+  def next_gen!
+    @board = @board.next_gen
+  end
+
   def to_s
     position = 1
     pretty_string = ""

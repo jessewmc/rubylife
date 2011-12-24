@@ -51,10 +51,14 @@ class GameOfLife
     #inelegant parallel iteration
     def private_load(filename)
 
+      width = 0
+
       File.open(filename) do |f|
 
+        raw_str = f.read
+        width = raw_str.index "\n"
         #Strip newlines from cel file
-        @raw_board = f.read.gsub(/\n/, "")
+        @raw_board = raw_str.gsub(/\n/, "")
 
       end
       
@@ -70,6 +74,8 @@ class GameOfLife
         end
         position += 1
       end
+
+      return width
     end
 
     #todo: generate initial raw board

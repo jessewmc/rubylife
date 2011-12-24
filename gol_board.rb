@@ -7,10 +7,9 @@ class GameOfLifeBoard
 
   end
 
-  #todo: which of these is more idiomatic?
   def each_cell
 
-    self.each_index do |x, y|
+    each_index do |x, y|
       yield @cells[x][y]
     end
 
@@ -18,6 +17,7 @@ class GameOfLifeBoard
 
   end
 
+  #should this be private? Not sure if anything else needs access
   def each_index
 
     0.upto(@size-1) do |x|

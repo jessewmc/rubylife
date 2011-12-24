@@ -20,6 +20,16 @@ class GameOfLifeBoard
 
   end
 
+  def each_index
+
+    0.upto(@size-1) do |x|
+      0.upto(@size-1) do |y|
+        yield x,y
+      end
+    end
+
+  end
+
   def other_each
 
     @cells.each_with_index do |i,j|

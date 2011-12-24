@@ -58,4 +58,6 @@ class GameOfLife
       end
     end
 
+    #todo: generate initial raw board
+
 end

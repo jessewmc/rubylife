@@ -25,6 +25,7 @@ class GameOfLife
       if position % @magic == 0
         pretty_string << "\n"
       end
+      position += 1
     end
     return pretty_string
   end

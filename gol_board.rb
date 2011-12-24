@@ -1,9 +1,9 @@
 class GameOfLifeBoard
 
-  def initialize(size=50)
+  def initialize(size=50, board = new_board(size))
 
     @size = size
-    @cells = new_board(@size)
+    @cells = board
 
   end
 
@@ -56,7 +56,7 @@ class GameOfLifeBoard
       end
     end
 
-    return next_board
+    return GameOfLifeBoard.new(@size, next_board)
   end
 
   private

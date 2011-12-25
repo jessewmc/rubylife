@@ -16,6 +16,7 @@ class GameOfLife
     @board = @board.next_gen
   end
 
+  #todo: fix magic numbers/chars in here
   def to_s
     position = 1
     pretty_string = ""
@@ -23,7 +24,7 @@ class GameOfLife
       if cell.alive?
         pretty_string << "x"
       else
-        pretty_string << "o"
+        pretty_string << "."
       end
 
       if position % @magic[0] == 0

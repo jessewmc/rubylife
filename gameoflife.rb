@@ -6,7 +6,7 @@ class GameOfLife
   def initialize
 
     #todo: nuke magic number
-    @magic = 6
+    @magic = [6,6]
     @board = GameOfLifeBoard.new(@magic)
     @raw_board = ""
 
@@ -26,7 +26,7 @@ class GameOfLife
         pretty_string << "o"
       end
 
-      if position % @magic == 0
+      if position % @magic[0] == 0
         pretty_string << "\n"
       end
       position += 1
@@ -51,9 +51,6 @@ class GameOfLife
     #inelegant parallel iteration
     def private_load(filename)
 
-      width = 0
-      length = 0
-
       File.open(filename) do |f|
 
         #strip newlines from cel file, determine length
@@ -62,11 +59,13 @@ class GameOfLife
 
         raw_str = f.read
         split_str = raw_str.to_s.split("\n")
-        width = split_str[0].size
-        length = split_str.size
+        @magic[0] = split_str[0].size
+        @magic[1] = split_str.size
         @raw_board = split_str.join
 
       end
+
+      @board = GameOfLifeBoard.new(@magic)
       
       position=0
       @board.each_cell do |cell|
@@ -81,7 +80,7 @@ class GameOfLife
         position += 1
       end
 
-      return width, length
+      return @magic
     end
 
     #todo: generate initial raw board

@@ -1,6 +1,6 @@
 class GameOfLifeBoard
 
-  def initialize(size=50, board = new_board(size))
+  def initialize(size=[50,50], board = new_board(size))
 
     @size = size
     @cells = board
@@ -20,8 +20,8 @@ class GameOfLifeBoard
   #should this be private? Not sure if anything else needs access
   def each_index
 
-    0.upto(@size-1) do |x|
-      0.upto(@size-1) do |y|
+    0.upto(@size[0]-1) do |x|
+      0.upto(@size[1]-1) do |y|
         yield x,y
       end
     end
@@ -62,8 +62,8 @@ class GameOfLifeBoard
   private
     
     def new_board(size)
-      board = Array.new(size) do
-        Array.new(size) do
+      board = Array.new(size[0]) do
+        Array.new(size[1]) do
           Cell.new
         end
       end

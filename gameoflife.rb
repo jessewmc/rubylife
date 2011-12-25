@@ -52,13 +52,19 @@ class GameOfLife
     def private_load(filename)
 
       width = 0
+      length = 0
 
       File.open(filename) do |f|
 
+        #strip newlines from cel file, determine length
+        #and width of board in file, produce raw board string
+        #without newlines
+
         raw_str = f.read
-        width = raw_str.index "\n"
-        #Strip newlines from cel file
-        @raw_board = raw_str.gsub(/\n/, "")
+        split_str = raw_str.to_s.split("\n")
+        width = split_str[0].size
+        length = split_str.size
+        @raw_board = split_str.join
 
       end
       
@@ -75,7 +81,7 @@ class GameOfLife
         position += 1
       end
 
-      return width
+      return width, length
     end
 
     #todo: generate initial raw board

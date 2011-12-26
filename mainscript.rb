@@ -13,8 +13,9 @@ print game
 
 if ARGV.size == 2
   1.upto ARGV[1].to_i do
-    sleep 0.6
+    sleep 0.8
     game.next_gen!
+    print "\n"
     print game
   end
 end

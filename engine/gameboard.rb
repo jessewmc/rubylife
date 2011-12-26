@@ -7,14 +7,23 @@ class GameBoard
   DEAD_CELL = "."
   NEW_LINE = "\n"
 
-  attr_reader :size
-  attr_accessor :cells
-
   def initialize(size = [50,50])
 
     @size = size
     @cells = new_board(size)
 
+  end
+
+  def size
+    @size.dup
+  end
+
+  def cells(x,y)
+    if x < 0 || y < 0 || x >= @size[0] || y >= @size[1]
+      return Cell.new
+    else
+      return @cells[x][y]
+    end
   end
 
   #todo: dump current board to file

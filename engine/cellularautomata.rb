@@ -50,6 +50,7 @@ class CellularAutomata
         split_str = raw_str.to_s.split("\n")
         @magic[0] = split_str[0].size
         @magic[1] = split_str.size
+        #todo: no need for this to be an instance variable
         @raw_board = split_str.join
 
       end

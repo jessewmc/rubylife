@@ -13,22 +13,18 @@ class ConwayRules
       (x-1).upto(x+1) do |i|
         (y-1).upto(y+1) do |j|
 
-          if board.cells[i].nil? then next end
-
-          if board.cells[i][j].nil? then next end
-
-          if board.cells[i][j].alive? then neighbours +=1 end
+          if board.cells(i,j).alive? then neighbours +=1 end
 
         end
       end
 
-      if board.cells[x][y].alive?
+      if board.cells(x,y).alive?
         neighbours-=1
         if (2..3).member? neighbours
-          next_board.cells[x][y].alive!
+          next_board.cells(x,y).alive!
         end
       elsif neighbours == 3
-        next_board.cells[x][y].alive!
+        next_board.cells(x,y).alive!
       end
     end
 

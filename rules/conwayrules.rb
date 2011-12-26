@@ -1,4 +1,4 @@
-
+class ConwayRules
   #returns a new GameOfLifeBoard object representing the next
   #generation as calculated from this generation
   def next_gen

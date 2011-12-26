@@ -1,6 +1,6 @@
 class GameOfLifeBoard
 
-  def initialize(size=[50,50], board = new_board(size))
+  def initialize(size = [50,50], board = new_board(size))
 
     @size = size
     @cells = board

@@ -36,17 +36,6 @@ class GameOfLifeBoard
 
   end
 
-  #should this be private? Not sure if anything else needs access
-  def each_index
-
-    0.upto(@size[0]-1) do |x|
-      0.upto(@size[1]-1) do |y|
-        yield x,y
-      end
-    end
-
-  end
-
   def next_gen
 
     next_board = new_board(@size)
@@ -87,6 +76,14 @@ class GameOfLifeBoard
         end
       end
       board
+    end
+
+    def each_index
+      0.upto(@size[0]-1) do |x|
+        0.upto(@size[1]-1) do |y|
+          yield x,y
+        end
+      end
     end
 
 end

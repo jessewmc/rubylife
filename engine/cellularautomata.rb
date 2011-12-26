@@ -1,13 +1,13 @@
 class CellularAutomata
   
-  require 'gameboard.rb'
-  require 'cell.rb'
+  require 'engine/gameboard.rb'
+  require 'engine/cell.rb'
 
   def initialize
 
     #todo: nuke magic number
     @magic = [6,6]
-    @board = GameOfLifeBoard.new(@magic)
+    @board = GameBoard.new(@magic)
     @raw_board = ""
 
   end
@@ -51,7 +51,7 @@ class CellularAutomata
 
       end
 
-      @board = GameOfLifeBoard.new(@magic)
+      @board = GameBoard.new(@magic)
       
       position=0
       @board.each_cell do |cell|

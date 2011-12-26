@@ -1,7 +1,7 @@
 class CellularAutomata
   
-  require 'gol_board.rb'
-  require 'gol_cell.rb'
+  require 'gameboard.rb'
+  require 'cell.rb'
 
   def initialize
 

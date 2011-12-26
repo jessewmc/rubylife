@@ -2,6 +2,7 @@ A simple exercise implementation of Conway's game of life in Ruby.
 
 usage: mainscript.rb [INPUT] [NUM] [OUTPUT]
   
+  Ensure mainscript.rb has execute permission set.
   eg: ./mainscript.rb cels/koksgalaxy.cel 8 demofinal.cel
 
   INPUT is the name of the input file. Expects a file in the form of

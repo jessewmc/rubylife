@@ -2,6 +2,7 @@ class CellularAutomata
   
   require 'engine/gameboard.rb'
   require 'engine/cell.rb'
+  require 'rules/conwayrules.rb'
 
   def initialize
 
@@ -9,11 +10,12 @@ class CellularAutomata
     @magic = [6,6]
     @board = GameBoard.new(@magic)
     @raw_board = ""
+    @rules = ConwayRules.new
 
   end
 
   def next_gen!
-    @board = @board.next_gen
+    @board = @rules.next_gen(@board)
   end
 
   def to_s

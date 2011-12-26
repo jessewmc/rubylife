@@ -7,10 +7,13 @@ class GameBoard
   DEAD_CELL = "."
   NEW_LINE = "\n"
 
-  def initialize(size = [50,50], board = new_board(size))
+  attr_reader :size
+  attr_accessor :cells
+
+  def initialize(size = [50,50])
 
     @size = size
-    @cells = board
+    @cells = new_board(size)
 
   end
 
@@ -45,6 +48,14 @@ class GameBoard
 
   end
 
+  #Sequentially iterates over cell matrix, yielding each set of coordinates
+  def each_index
+    0.upto(@size[0]-1) do |x|
+      0.upto(@size[1]-1) do |y|
+        yield x,y
+      end
+    end
+  end
 
   private
     
@@ -58,17 +69,6 @@ class GameBoard
         end
       end
       board
-    end
-
-    #Sequentially iterates over each cell in the matrix and
-    #yields the cell's coordinates.
-
-    def each_index
-      0.upto(@size[0]-1) do |x|
-        0.upto(@size[1]-1) do |y|
-          yield x,y
-        end
-      end
     end
 
 end

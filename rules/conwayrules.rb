@@ -1,33 +1,38 @@
 class ConwayRules
+
+  require 'engine/gameboard.rb'
+
   #returns a new GameOfLifeBoard object representing the next
   #generation as calculated from this generation
-  def next_gen
+  def next_gen(board)
 
-    next_board = new_board(@size)
+    next_board = GameBoard.new(board.size)
 
-    each_index do |x, y|
+    board.each_index do |x, y|
       neighbours=0
       (x-1).upto(x+1) do |i|
         (y-1).upto(y+1) do |j|
 
-          if @cells[i].nil? then next end
+          if board.cells[i].nil? then next end
 
-          if @cells[i][j].nil? then next end
+          if board.cells[i][j].nil? then next end
 
-          if @cells[i][j].alive? then neighbours +=1 end
+          if board.cells[i][j].alive? then neighbours +=1 end
 
         end
       end
 
-      if @cells[x][y].alive?
+      if board.cells[x][y].alive?
         neighbours-=1
         if (2..3).member? neighbours
-          next_board[x][y].alive!
+          next_board.cells[x][y].alive!
         end
       elsif neighbours == 3
-        next_board[x][y].alive!
+        next_board.cells[x][y].alive!
       end
     end
 
-    return GameOfLifeBoard.new(@size, next_board)
+    return next_board
   end
+
+end

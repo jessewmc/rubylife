@@ -3,7 +3,7 @@
 
 class GameBoard
 
-  LIVE_CELL = "x"
+  LIVE_CELL = "X"
   DEAD_CELL = "."
   NEW_LINE = "\n"
 

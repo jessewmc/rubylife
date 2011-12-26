@@ -5,16 +5,31 @@ To try it out, make sure that you have execute permission on mainscript.rb. Runn
 ./mainscript.rb will give you a blurb on usage. Or you can try this example if you just
 want to see what happens:
 
-$ ./mainscript.rb cels/koksgalaxy.cel 8
+  $ ./mainscript.rb cels/koksgalaxy.cel 8
 
 This example shows a period 8 oscillator. After 8 generations, the original is reproduced.
 
-Some patterns are demonstrably infinite. Try:
+Some patterns produce demonstrably infinite population growth. Try:
 
-$ ./mainscript.rb cels/gosperglidergun.cel 30
+  $ ./mainscript.rb cels/gosperglidergun.cel 60
 
 See http://en.wikipedia.org/wiki/Conway's_Game_of_Life for a description of Conway's
 rules, history, etc.
 
 Another good resource is http://www.conwaylife.com/wiki/. The Life Wiki contains a vast
 catalogue of patterns to try as well as explanation.
+
+-------
+
+Implementation notes:
+
+My implementation considers anything outside the edges of the .cel file to be dead cells.
+Because of this, patterns do not behave well if they run into the edges.
+
+Right now I determine simulation dimensions from the length of the first line and the 
+number of lines in the file. I also expect the file to be fully filled in, i.e. there 
+should be no lines with a different number of characters than the first line. .cel files 
+that don't follow these guidelines will behave strangely!
+
+I have just started development on this project. I would like to fix these shortcomings 
+in the future. See the TODO file for things I'd like to change/add/etc.

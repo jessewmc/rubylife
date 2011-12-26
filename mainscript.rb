@@ -4,7 +4,7 @@ require 'engine/cellularautomata.rb'
 if ARGV.size == 0
   #exits program and prints string argument. `...` is the string containing
   #the result of the commandline command
-  abort `cat README`
+  abort `cat usage`
 end
 
 game = CellularAutomata.new

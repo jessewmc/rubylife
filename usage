@@ -1,0 +1,16 @@
+usage: mainscript.rb [INPUT] [NUM] [OUTPUT]
+  
+  eg: ./mainscript.rb cels/koksgalaxy.cel 8 demofinal.cel
+
+  INPUT is the name of the input file. Expects a file in the form of
+    ....
+    .xx.
+    .xx.
+    ....
+  where x is a live cell and any other character is interpretted as a dead cell.
+  There are multiple examples provided in /cels.
+  If this is the only command line argument the INPUT file is printed and the program exits.
+
+  NUM is the number of generations to calculate. Each generation is printed out to the console.
+
+  OUTPUT is the name of the output file. The script will write the final generation to this file in the format described in INPUT.

@@ -1,3 +1,5 @@
+#todo: extend for mutliple cell statuses (not binary)
+
 class Cell
   
   def initialize(status=false)

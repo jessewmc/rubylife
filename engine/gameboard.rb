@@ -38,7 +38,7 @@ class GameBoard
         pretty_string << DEAD_CELL
       end
 
-      if position % @size[0] == 0
+      if position % @size[1] == 0
         pretty_string << NEW_LINE
       end
       position += 1

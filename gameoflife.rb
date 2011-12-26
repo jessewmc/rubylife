@@ -16,23 +16,8 @@ class GameOfLife
     @board = @board.next_gen
   end
 
-  #todo: fix magic numbers/chars in here
   def to_s
-    position = 1
-    pretty_string = ""
-    @board.each_cell do |cell|    
-      if cell.alive?
-        pretty_string << "x"
-      else
-        pretty_string << "."
-      end
-
-      if position % @magic[0] == 0
-        pretty_string << "\n"
-      end
-      position += 1
-    end
-    return pretty_string
+    @board.to_s
   end
         
   #load_board expects a text file in the form of

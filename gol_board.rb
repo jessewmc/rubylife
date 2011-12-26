@@ -26,6 +26,7 @@ class GameOfLifeBoard
     return pretty_string
   end
 
+  #iterates over cell matrix sequentially
   def each_cell
 
     each_index do |x, y|
@@ -36,6 +37,8 @@ class GameOfLifeBoard
 
   end
 
+  #returns a new GameOfLifeBoard object representing the next
+  #generation as calculated from this generation
   def next_gen
 
     next_board = new_board(@size)
@@ -69,6 +72,9 @@ class GameOfLifeBoard
 
   private
     
+    #Creates a new array for board use. Size is expected to be
+    #a two element array of Fixnums [x,y] producing an array x by y.
+
     def new_board(size)
       board = Array.new(size[0]) do
         Array.new(size[1]) do
@@ -77,6 +83,9 @@ class GameOfLifeBoard
       end
       board
     end
+
+    #Sequentially iterates over each cell in the matrix and
+    #yields the cell's coordinates.
 
     def each_index
       0.upto(@size[0]-1) do |x|

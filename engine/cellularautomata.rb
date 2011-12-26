@@ -6,7 +6,8 @@ class CellularAutomata
 
   def initialize
 
-    #todo: nuke magic number
+    #todo: nuke magic number,
+    #make raw_board method
     @magic = [6,6]
     @board = GameBoard.new(@magic)
     @raw_board = ""

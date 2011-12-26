@@ -12,7 +12,7 @@ game.load_board "#{ARGV[0]}"
 print game
 
 if ARGV.size == 2
-  0.upto ARGV[1].to_i do
+  1.upto ARGV[1].to_i do
     sleep 0.6
     game.next_gen!
     print game

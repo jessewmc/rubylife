@@ -7,6 +7,7 @@ class GameOfLifeBoard
 
   end
   
+  #todo: get rid of raw strings, use constants
   def to_s
     position = 1
     pretty_string = ""

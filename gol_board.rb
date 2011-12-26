@@ -6,6 +6,24 @@ class GameOfLifeBoard
     @cells = board
 
   end
+  
+  def to_s
+    position = 1
+    pretty_string = ""
+    each_cell do |cell|    
+      if cell.alive?
+        pretty_string << "x"
+      else
+        pretty_string << "."
+      end
+
+      if position % @size[0] == 0
+        pretty_string << "\n"
+      end
+      position += 1
+    end
+    return pretty_string
+  end
 
   def each_cell
 

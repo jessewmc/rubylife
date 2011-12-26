@@ -1,5 +1,9 @@
 class GameOfLifeBoard
 
+  LIVE_CELL = "x"
+  DEAD_CELL = "."
+  NEW_LINE = "\n"
+
   def initialize(size = [50,50], board = new_board(size))
 
     @size = size
@@ -7,19 +11,18 @@ class GameOfLifeBoard
 
   end
   
-  #todo: get rid of raw strings, use constants
   def to_s
     position = 1
     pretty_string = ""
     each_cell do |cell|    
       if cell.alive?
-        pretty_string << "x"
+        pretty_string << LIVE_CELL
       else
-        pretty_string << "."
+        pretty_string << DEAD_CELL
       end
 
       if position % @size[0] == 0
-        pretty_string << "\n"
+        pretty_string << NEW_LINE
       end
       position += 1
     end

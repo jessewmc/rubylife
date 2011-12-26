@@ -1,3 +1,6 @@
+#todo: make this gameboard, remove next_gen
+#load/dump should be here?
+
 class GameOfLifeBoard
 
   LIVE_CELL = "x"
@@ -10,6 +13,8 @@ class GameOfLifeBoard
     @cells = board
 
   end
+
+  #todo: dump current board to file
   
   def to_s
     position = 1

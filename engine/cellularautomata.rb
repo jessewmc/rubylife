@@ -27,11 +27,13 @@ class CellularAutomata
   #oxxo
   #oooo
   #where x is a live cell.
-  #todo: get board dimensions from file instead of
-  #assuming hardcoded
 
   def load_board(filename)
     @board.load(filename)
+  end
+
+  def write_board(filename)
+    @board.write(filename)
   end
 
   private

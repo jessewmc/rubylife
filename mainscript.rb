@@ -11,7 +11,7 @@ game = CellularAutomata.new
 game.load_board "#{ARGV[0]}"
 print game
 
-if ARGV.size == 2
+if ARGV.size >= 2
   1.upto ARGV[1].to_i do
     sleep 0.8
     game.next_gen!
@@ -20,3 +20,6 @@ if ARGV.size == 2
   end
 end
 
+if ARGV.size >= 3
+  game.write_board(ARGV[2])
+end

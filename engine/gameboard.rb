@@ -66,6 +66,43 @@ class GameBoard
     end
   end
 
+  #inelegant parallel iteration
+  def load(filename)
+
+    raw_board = ""
+
+    File.open(filename) do |f|
+
+      #strip newlines from cel file, determine length
+      #and width of board in file, produce raw board string
+      #without newlines
+
+      raw_str = f.read
+      split_str = raw_str.to_s.split("\n")
+      @size[1] = split_str[0].size
+      @size[0] = split_str.size
+      raw_board = split_str.join
+
+    end
+
+    @cells=new_board(@size)
+
+    position=0
+    each_cell do |cell|
+      #todo: nuke magic number
+      #120 is char code for "x" which is
+      #a live cell
+      if raw_board[position] == 120
+        cell.alive!
+      else
+        cell.dead!
+      end
+      position += 1
+    end
+
+    return @size
+  end
+
   private
     
     #Creates a new array for board use. Size is expected to be

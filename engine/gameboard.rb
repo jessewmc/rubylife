@@ -66,7 +66,17 @@ class GameBoard
     end
   end
 
-  #inelegant parallel iteration
+  def write(filename)
+
+    #Open file in append mode, won't clobber pre-existing file
+    File.open(filename, "a") do |f|
+      
+      #implicitly calls to_s
+      f.write self
+
+    end
+  end
+
   def load(filename)
 
     raw_board = ""
@@ -87,6 +97,7 @@ class GameBoard
 
     @cells=new_board(@size)
 
+    #inelegant parallel iteration
     position=0
     each_cell do |cell|
       #todo: nuke magic number

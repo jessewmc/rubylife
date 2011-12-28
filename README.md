@@ -12,13 +12,13 @@ To try it out, make sure that you have execute permission on mainscript.rb. Runn
 ./mainscript.rb will give you a blurb on usage. Or you can try this example if you just
 want to see what happens:
 
-  $ ./mainscript.rb -i cels/koksgalaxy.cel -g 8
+    $ ./mainscript.rb -i cels/koksgalaxy.cel -g 8
 
 This example shows a period 8 oscillator. After 8 generations, the original is reproduced.
 
 Some patterns produce demonstrably infinite population growth. Try:
 
-  $ ./mainscript.rb -i cels/gosperglidergun.cel -g 90 -d 0.1
+    $ ./mainscript.rb -i cels/gosperglidergun.cel -g 90 -d 0.1
 
 See http://en.wikipedia.org/wiki/Conway's_Game_of_Life for a description of Conway's
 rules, history, etc.

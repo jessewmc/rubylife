@@ -1,10 +1,10 @@
 #Ruby Life
 
 This is a simple exercise implementation of Conway's game of life in Ruby. It's pretty
-limited right now. The inefficient implementation and limited visualization capacity
-make it most suitable for a visual introduction to the basics of the game (for now). It
-is also pretty good for manual experimentation with small patterns.
-In the future I hope to expand its capability (see TODO).
+limited right now. The naive implementation and limited visualization capacity make
+it most suitable for a visual introduction to the basics of the game (for now). It is
+also pretty good for manual experimentation with small patterns. In the future I hope 
+to expand its capability (see TODO).
 
 ##Examples
 

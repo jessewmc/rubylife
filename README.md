@@ -1,8 +1,12 @@
+#Ruby Life
+
 This is a simple exercise implementation of Conway's game of life in Ruby. It's pretty
 limited right now. The inefficient implementation and limited visualization capacity
 make it most suitable for a visual introduction to the basics of the game (for now). It
 is also pretty good for manual experimentation with small patterns.
 In the future I hope to expand its capability (see TODO).
+
+##Examples
 
 To try it out, make sure that you have execute permission on mainscript.rb. Running 
 ./mainscript.rb will give you a blurb on usage. Or you can try this example if you just
@@ -22,9 +26,7 @@ rules, history, etc.
 Another good resource is http://www.conwaylife.com/wiki/. The Life Wiki contains a vast
 catalogue of patterns to try as well as explanation.
 
--------
-
-Implementation notes:
+##Implementation notes:
 
 My implementation considers anything outside the edges of the .cel file to be dead cells.
 Because of this, patterns do not behave well if they run into the edges.

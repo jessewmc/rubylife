@@ -9,7 +9,9 @@ options = {}
 
 optparse = OptionParser.new do |opts|
   
-  opts.banner = `cat usage` 
+  File.open("usage") do |f|
+    opts.banner = f.read
+  end
 
   options[:generations] = 0
   opts.on( '-g', '--generations N', Integer, 'Number of generations to be computed' ) do |g|

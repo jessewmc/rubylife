@@ -20,12 +20,12 @@ Some patterns produce demonstrably infinite population growth. Try:
     $ ./mainscript.rb -i cels/gosperglidergun.cel -g 90 -d 0.1
 
 Other interesting patterns include so called 'methuselahs.' Make sure your command window 
-is maximized and try:
+is maximized (does not play well with Windows) and try:
   
     $ ./mainscript.rb -i cels/acorn.cel -g 100 -d 0.1
 
 This pattern eventually stabilizes after 5206 generations. The current text visualization
-is not adequate to view the complete pattern.
+and static board size is not adequate to view the complete pattern.
 
 See http://en.wikipedia.org/wiki/Conway's_Game_of_Life for a description of Conway's
 rules, history, etc.

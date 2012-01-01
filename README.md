@@ -24,6 +24,9 @@ is maximized and try:
   
     $ ./mainscript.rb -i cels/acorn.cel -g 100 -d 0.1
 
+This pattern eventually stabilizes after 5206 generations. The current text visualization
+is not adequate to view the complete pattern.
+
 See http://en.wikipedia.org/wiki/Conway's_Game_of_Life for a description of Conway's
 rules, history, etc.
 

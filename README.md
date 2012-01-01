@@ -1,4 +1,4 @@
-#Ruby Life
+#Rubylife
 
 This is a simple exercise implementation of Conway's game of life in Ruby. It's pretty
 limited right now. The naive implementation and limited visualization capacity make
@@ -9,8 +9,7 @@ to expand its capability (see TODO).
 ##Examples
 
 To try it out, make sure that you have execute permission on mainscript.rb. Running 
-./mainscript.rb will give you a blurb on usage. Or you can try this example if you just
-want to see what happens:
+./mainscript.rb will give you a blurb on usage (on Windows leave out ./ in cmd, goes for all subsequent examples). Or you can try this example if you just want to see what happens:
 
     $ ./mainscript.rb -i cels/koksgalaxy.cel -g 8
 
@@ -19,6 +18,11 @@ This example shows a period 8 oscillator. After 8 generations, the original is r
 Some patterns produce demonstrably infinite population growth. Try:
 
     $ ./mainscript.rb -i cels/gosperglidergun.cel -g 90 -d 0.1
+
+Other interesting patterns include so called 'methuselahs.' Make sure your command window 
+is maximized and try:
+  
+    $ ./mainscript.rb -i cels/acorn.cel -g 100 -d 0.1
 
 See http://en.wikipedia.org/wiki/Conway's_Game_of_Life for a description of Conway's
 rules, history, etc.

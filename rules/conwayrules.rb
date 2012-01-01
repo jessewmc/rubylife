@@ -1,6 +1,6 @@
 class ConwayRules
 
-  require 'engine/gameboard.rb'
+  require_relative '../engine/gameboard.rb'
 
   #returns a new GameOfLifeBoard object representing the next
   #generation as calculated from this generation

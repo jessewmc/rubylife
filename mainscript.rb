@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
-require_relative 'engine/cellularautomata.rb'
+require_relative 'lib/cellularautomata.rb'
 require 'optparse'
 
 #Simple script using Ruby's built in command line option parser.

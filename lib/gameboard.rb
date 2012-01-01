@@ -101,9 +101,9 @@ class GameBoard
     position=0
     each_cell do |cell|
       #todo: nuke magic number
-      #120 is char code for "x" which is
-      #a live cell
-      if raw_board[position] == 120
+      #"x" is the expected encoding of a live cell, all other
+      #characters are considered dead
+      if raw_board[position] == "x" 
         cell.alive!
       else
         cell.dead!

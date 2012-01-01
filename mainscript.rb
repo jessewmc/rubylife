@@ -30,6 +30,12 @@ optparse = OptionParser.new do |opts|
   opts.on( '-i', '--input [FILE]', String, 'Input .cel file' ) do |i|
     options[:input] = i
   end
+
+  options[:terse] = false
+  opts.on( '-t', '--terse', 'Do not print any output. For use with -o' ) do
+    options[:terse] = true
+  end
+
 end
 
 optparse.parse!
@@ -38,13 +44,24 @@ abort banner unless options[:input]
 
 game = CellularAutomata.new
 game.load_board options[:input]
-print game
+if !options[:terse]
+  print game
+else
+  puts "Working..."
+  time = Time.now
+end
 
 1.upto options[:generations] do
+  game.next_gen!
+  if !options[:terse]
     sleep options[:delay]
-    game.next_gen!
     print "\n"
     print game
+  end
+end
+
+if options[:terse]
+  puts "Completed in #{Time.now - time} seconds."
 end
 
 if options[:output]

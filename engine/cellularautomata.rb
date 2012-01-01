@@ -1,8 +1,8 @@
 class CellularAutomata
   
-  require 'engine/gameboard.rb'
-  require 'engine/cell.rb'
-  require 'rules/conwayrules.rb'
+  require_relative 'engine/gameboard.rb'
+  require_relative 'engine/cell.rb'
+  require_relative 'rules/conwayrules.rb'
 
   def initialize
 

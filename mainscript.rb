@@ -5,12 +5,12 @@ require 'optparse'
 #Simple script using Ruby's built in command line option parser.
 
 options = {}
-
+banner = ""
 
 optparse = OptionParser.new do |opts|
   
   File.open("usage") do |f|
-    opts.banner = f.read
+    opts.banner = banner = f.read
   end
 
   options[:generations] = 0
@@ -34,7 +34,7 @@ end
 
 optparse.parse!
 
-abort `cat usage` unless options[:input]
+abort banner unless options[:input]
 
 game = CellularAutomata.new
 game.load_board options[:input]

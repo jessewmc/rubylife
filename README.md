@@ -4,7 +4,7 @@ This is a simple exercise implementation of Conway's game of life in Ruby. It's 
 limited right now. The naive implementation and limited visualization capacity make
 it most suitable for a visual introduction to the basics of the game (for now). It is
 also pretty good for manual experimentation with small patterns. In the future I hope 
-to expand its capability (see TODO).
+to expand its capability.
 
 ##Examples
 
@@ -42,6 +42,3 @@ Right now I determine simulation dimensions from the length of the first line an
 number of lines in the file. I also expect the file to be fully filled in, i.e. there 
 should be no lines with a different number of characters than the first line. .cel files 
 that don't follow these guidelines will behave strangely!
-
-I have just started development on this project. I would like to fix these shortcomings 
-in the future. See the TODO file for things I'd like to change/add/etc.

@@ -9,7 +9,7 @@ banner = ""
 
 optparse = OptionParser.new do |opts|
   
-  File.open("usage") do |f|
+  File.open "usage" do |f|
     opts.banner = banner = f.read
   end
 
@@ -65,5 +65,5 @@ if options[:terse]
 end
 
 if options[:output]
-  game.write_board(options[:output])
+  game.write_board options[:output]
 end

@@ -1,6 +1,3 @@
-#todo: make this gameboard, remove next_gen
-#load/dump should be here?
-
 class GameBoard
 
   LIVE_CELL = "X"
@@ -19,6 +16,8 @@ class GameBoard
   end
 
   def cells(x,y)
+    #out of bounds calls return a new instance of a dead cell
+    #preventing interference with existing cells
     if x < 0 || y < 0 || x >= @size[0] || y >= @size[1]
       return Cell.new
     else
@@ -26,8 +25,6 @@ class GameBoard
     end
   end
 
-  #todo: dump current board to file
-  
   def to_s
     position = 1
     pretty_string = ""
@@ -69,6 +66,7 @@ class GameBoard
   def write(filename)
 
     #Open file in append mode, won't clobber pre-existing file
+    #although it will make a small mess
     File.open(filename, "a") do |f|
       
       #implicitly calls to_s
@@ -100,7 +98,7 @@ class GameBoard
     #inelegant parallel iteration
     position=0
     each_cell do |cell|
-      #todo: nuke magic number
+      #todo: nuke magic number char
       #"x" is the expected encoding of a live cell, all other
       #characters are considered dead
       if raw_board[position] == "x" 

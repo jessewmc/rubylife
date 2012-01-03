@@ -6,10 +6,7 @@ class CellularAutomata
 
   def initialize
 
-    #todo: nuke magic number,
-    #make raw_board method
-    @magic = [6,6]
-    @board = GameBoard.new(@magic)
+    @board = GameBoard.new
     @rules = ConwayRules.new
 
   end
@@ -23,9 +20,9 @@ class CellularAutomata
   end
         
   #load_board expects a text file in the form of
-  #oooo
-  #oxxo
-  #oooo
+  #....
+  #.xx.
+  #....
   #where x is a live cell.
 
   def load_board(filename)
@@ -35,10 +32,5 @@ class CellularAutomata
   def write_board(filename)
     @board.write(filename)
   end
-
-  private
-    
-
-    #todo: generate initial raw board
 
 end

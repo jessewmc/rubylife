@@ -1,4 +1,4 @@
-usage: mainscript.rb -i [INPUT] -g [GENERATIONS] -o [OUTPUT] -d [DELAY]
+usage: mainscript.rb -i [INPUT] -g [GENERATIONS] -o [OUTPUT] -d [DELAY] -t
   
   eg: ./mainscript.rb -i cels/koksgalaxy.cel -g 8 -o cels/demofinal.cel
   or: ./mainscript.rb -i cels/gosperglidergun.cel -g 60 -d 0.1
@@ -10,10 +10,12 @@ usage: mainscript.rb -i [INPUT] -g [GENERATIONS] -o [OUTPUT] -d [DELAY]
     ....
   where x is a live cell and any other character is interpretted as a dead cell.
   There are multiple examples provided in /cels.
-  If this is the only command line argument the INPUT file is printed and the program exits.
+  If this is the only command line argument the INPUT file is printed and the program exits. This is the only required option.
 
   GENERATIONS is the number of generations to calculate. Each generation is printed out to the console.
 
   OUTPUT is the name of the output file. The script will write the final generation to this file in the format described in INPUT.
 
   DELAY is the delay in seconds between printing of subsequent generations. Default is 0.8. Try 0 < N < 1.
+
+  -t is terse mode. Supresses output and delay.

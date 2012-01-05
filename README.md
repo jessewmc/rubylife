@@ -42,3 +42,5 @@ Right now I determine simulation dimensions from the length of the first line an
 number of lines in the file. I also expect the file to be fully filled in, i.e. there 
 should be no lines with a different number of characters than the first line. .cel files 
 that don't follow these guidelines will behave strangely!
+
+In the future I would like to implement hashlife (http://www.sciencedirect.com/science/article/pii/0167278984902513), arbitrary board sizes, and some of the pattern file formats at http://conwaylife.com/wiki/.
